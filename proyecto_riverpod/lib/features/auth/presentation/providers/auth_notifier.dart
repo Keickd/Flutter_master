@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:proyecto_riverpod/features/auth/data/models/user_dto.dart';
 import 'package:proyecto_riverpod/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:proyecto_riverpod/features/auth/domain/models/user.dart';
 import 'package:proyecto_riverpod/features/auth/presentation/providers/auth_state.dart';
 
 class AuthNotifier extends StateNotifier<AuthState> {
@@ -25,6 +26,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         isSuccess: true,
         isFail: false,
         authStatus: AuthStatus.authenticated,
+        user: User(username: username, password: password, email: email),
       );
     } else {
       state = state.copyWith(isLoading: false, isFail: true);
@@ -44,6 +46,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         isSuccess: true,
         isFail: false,
         authStatus: AuthStatus.authenticated,
+        user: User(username: username, password: password, email: ''),
       );
     } else {
       state = state.copyWith(isLoading: false, isFail: true);
