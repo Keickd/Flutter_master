@@ -16,7 +16,7 @@ class ProfileNotifier extends StateNotifier<ProfileState> {
 
     if (userFromDb != null) {
       final user = User(
-        username: userFromDb!.username,
+        username: userFromDb.username,
         password: userFromDb.password,
         email: userFromDb.email,
       );

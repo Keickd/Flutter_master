@@ -12,7 +12,7 @@ class LoginScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<AuthState>(authNotifierProvider, (previous, next) {
       if (next.isSuccess) {
-        context.go('/home');
+        context.go('/home_selector');
         ref.read(authNotifierProvider.notifier).resetStatus();
       } else if (next.isFail) {
         showDialog(

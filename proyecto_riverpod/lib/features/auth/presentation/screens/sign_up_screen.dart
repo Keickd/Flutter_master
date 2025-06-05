@@ -24,7 +24,7 @@ class SignUpScreen extends ConsumerWidget {
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
-                      context.go('/home');
+                      context.go('/home_selector');
 
                       ref
                           .read(authNotifierProvider.notifier)
